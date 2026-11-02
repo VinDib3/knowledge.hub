@@ -77,20 +77,23 @@ body{background:#eef1f7;color:#34425f;font-size:13px;line-height:1.5}
 <aside class="side"><section class="panel"><h3>Accessi rapidi</h3><a class="quicklink" href="#" data-area="manuali"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5z"/></svg>Manuali operativi</a><a class="quicklink" href="#" data-area="progetti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h9l5 5v13H5zM14 3v6h5"/></svg>Documentazione Progetto Gestione delle cronicità</a><a class="quicklink" href="#" data-area="normativa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 20 7v5c0 5-3.4 7.8-8 9-4.6-1.2-8-4-8-9V7z"/></svg>Riferimenti normativi</a><p class="note">Apri un’area per consultare i documenti disponibili.</p></section></aside></div></main></div>
 <div class="overlay" id="overlay"></div><aside class="drawer" id="drawer" aria-hidden="true"><div class="drawer-head"><div class="drawer-titleline"><div><div class="eyebrow">Area documentale</div><h2 id="drawerTitle">Manuali operativi</h2><p id="drawerSubtitle">Guide e procedure disponibili</p></div><button class="close" id="closeDrawer" aria-label="Chiudi">×</button></div></div><div class="drawer-body"><input id="manualSearch" class="drawer-search" type="search" placeholder="Filtra l'elenco…" aria-label="Filtra documenti"><div class="manual-list" id="manualList"></div></div><div class="drawer-foot">I documenti vengono aperti direttamente dal repository del sito.</div></aside>
 <script>
+ //APERTURA MODULI A SINISTRA CON ELENCO DOCUMENTI
 const library={
  manuali:{title:'Manuali operativi',subtitle:'Guide, procedure e istruzioni per gli utenti',items:[
   {title:'Proposta di stratificazione',desc:'Manuale operativo · Progetto Gestione delle cronicità',url:'%5BRG-ME%5D%20PROGETTO%20CRONICIT%C3%80%20-%20STRATIFICAZIONE.pdf'}]},
  progetti:{title:'Documentazione Progetto Gestione delle cronicità',subtitle:'Materiali, analisi e documenti di lavoro',items:[
-  {title:'Gestione della cronicità',desc:'Analisi, presentazioni e materiali di progetto',url:'#'},
-  {title:'Progetto Grandi Anziani',desc:'Documenti e aggiornamenti dell’iniziativa',url:'#'},
-  {title:'ARIASP',desc:'Materiali progettuali e documentazione',url:'#'}]},
- normativa:{title:'Basi normative',subtitle:'Norme, linee guida e riferimenti istituzionali',items:[
+  //{title:'Gestione della cronicità',desc:'Analisi, presentazioni e materiali di progetto',url:'#'},
+  //{title:'Progetto Grandi Anziani',desc:'Documenti e aggiornamenti dell’iniziativa',url:'#'}
+  ]},
+  normativa:{title:'Basi normative',subtitle:'Norme, linee guida e riferimenti istituzionali',items:[
   {title:'Decreto Ministeriale 77/2022',desc:'Modelli e standard per lo sviluppo dell’assistenza territoriale',url:'https://www.gazzettaufficiale.it/'},
   {title:'Piano Nazionale della Cronicità',desc:'Riferimento istituzionale · Ministero della Salute',url:'https://www.salute.gov.it/'},
-  {title:'AGENAS',desc:'Documenti, iniziative e risorse istituzionali',url:'https://www.agenas.gov.it/'}]},
+  {title:'AGENAS',desc:'Documenti, iniziative e risorse istituzionali',url:'https://www.agenas.gov.it/'}
+  ]},
  news:{title:'News e aggiornamenti',subtitle:'Comunicazioni e novità del progetto',items:[
-  {title:'Aggiornamenti di progetto',desc:'Inserire qui comunicazioni e novità recenti',url:'#'},
-  {title:'Scadenze e appuntamenti',desc:'Inserire qui date e promemoria condivisi',url:'#'}]}
+  //{title:'Aggiornamenti di progetto',desc:'Inserire qui comunicazioni e novità recenti',url:'#'},
+  //{title:'Scadenze e appuntamenti',desc:'Inserire qui date e promemoria condivisi',url:'#'}
+ ]}
 };
 const $=id=>document.getElementById(id);let currentArea='manuali';
 function iconFile(){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 3h9l5 5v13H5z"/><path d="M14 3v6h5M8 13h8M8 17h6"/></svg>'}
